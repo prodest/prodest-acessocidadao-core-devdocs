@@ -1,4 +1,4 @@
-﻿# Scopes de usuário disponíveis no Acesso Cidadão
+# Scopes de usuário
 
 ## Específicos do Acesso Cidadão
 

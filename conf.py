@@ -21,8 +21,8 @@ import recommonmark
 
 # -- Project information -----------------------------------------------------
 
-project = 'Acesso Cidadão'
-copyright = '2019, PRODEST'
+project = 'Acesso Cidadão para Devs'
+copyright = '2020, PRODEST'
 author = 'PRODEST'
 
 # The full version, including alpha/beta/rc tags
