@@ -15,7 +15,6 @@ Atualmente a solução chamada de Acesso Cidadão(AC) pode ser dividida em vári
 **Autenticação como serviço** 
 Lógica de login centralizada e workflow para todo tipo de aplicação (web, nativo, mobile e serviços). Isso inclui os serviços de Single sign-on (e sign-out). Leia mais [aqui](./AutenticacaoUsuarios/AutenticacaoUsuarios.md);
 
-    .. Nota:
     O Single sign-out está sendo reformulado e é esperado que esteja funcionando normalmente na nova versão
 
 **Controle de acesso para APIs** 
