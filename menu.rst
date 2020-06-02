@@ -42,8 +42,8 @@ Seja bem vindo à documentação do Acesso Cidadão para Devs!
     :hidden:
     :caption: Web APIs
 
-    Api/Introducao
-    Api/ClientCredentials
+    Api/ApisEstado
+    Api/ApiAcessoCidadao
 
 .. toctree::
     :maxdepth: 3
