@@ -1,5 +1,5 @@
 import recommonmark
-#from recommonmark.transform import AutoStructify
+from recommonmark.transform import AutoStructify
 #from recommonmark.parser import CommonMarkParser
 
 # Configuration file for the Sphinx documentation builder.
@@ -34,7 +34,9 @@ release = '1.0.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark']
+extensions = ['recommonmark'
+,'sphinx_markdown_tables'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -44,7 +46,7 @@ templates_path = ['_templates']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'pt-br'
+language = 'pt_BR'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -59,6 +61,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+html_theme_path = ["_themes", ]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -78,3 +81,14 @@ master_doc = 'menu'
 #            'auto_toc_tree_section': 'Contents',
 #            }, True)
 #    app.add_transform(AutoStructify)
+
+# app setup hook
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+        #'url_resolver': lambda url: github_doc_root + url,
+        'auto_toc_tree_section': 'Contents',
+        'enable_math': False,
+        'enable_inline_math': False,
+        'enable_eval_rst': True
+    }, True)
+    app.add_transform(AutoStructify)
