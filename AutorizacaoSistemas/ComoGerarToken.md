@@ -1,8 +1,11 @@
 # Como gerar um access_token de sistema
 
-Para que a autenticação aconteça, todo o canal de comunicação deve ser realizado com o protocolo HTTPS. Será feito uma requisição a uma URL de autorização do Acesso Cidadão e, após a autenticação ser concluída, retornará um token de acesso em nome do sistema para consumir os serviços protegidos.
+Nessa página é explicado todo o processo necessário para autorização de um sistema. Em resumo será feito uma requisição a URL específica do Acesso Cidadão de onde será retornado um token de acesso em nome do sistema permitindo assim consumir os serviços protegidos.
 
-A utilização da autenticação de sistemas no Acesso Cidadão depende dos seguintes passos:
+``` important:: Toda comunicação com Acesso Cidadão deve ser realizada com o protocolo HTTPS
+```
+
+A utilização da autorização de sistemas no Acesso Cidadão depende dos seguintes passos:
 
 1\. Para obter o token de acesso de sistema, o consumidor deve fazer uma requisição POST para o endereço https://acessocidadao.es.gov.br/is/connect/token passando as seguintes informações:
 
@@ -60,3 +63,10 @@ Parâmetros que devem ser colocados no Body da requisição POST para **https://
 ```
 
 2\. De posse do token do json anterior, a aplicação consumidora está habilitada a fazer chamada aos endpoints protegidos que solicitam Access Token do Acesso Cidadão.
+
+``` important:: 
+    Além da necessidade de um Token de Acesso a maioria dos serviços que podem ser consumidos tem regras específicas que 
+    devem ser consultadas na documentação de cada serviço. Em geral, pelo menos alguns scopes de sistema são exigidos
+    por serviço sendo consumido. Você pode consultar mais informações sobre scopes de sistema na próxima seção.
+```
+

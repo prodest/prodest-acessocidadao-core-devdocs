@@ -49,7 +49,7 @@ msgstr "Anterior"
 #: sphinx_rtd_theme/footer.html:21 sphinx_rtd_theme/footer.html:24
 #: sphinx_rtd_theme/layout.html:96
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "Copyright111"
 
 #. Build is a noun, not a verb
 #: sphinx_rtd_theme/footer.html:31

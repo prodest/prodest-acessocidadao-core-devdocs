@@ -8,22 +8,21 @@ Seja bem vindo à documentação do Acesso Cidadão para Devs!
     :hidden:
     
     index
+    AutenticacaoAutorizacao
 
 .. toctree::
     :maxdepth: 3
     :hidden:
-    :caption: Autenticação de Sistemas
+    :caption: Autorização de Sistemas (Para acessar APIs)
 
-    AutenticacaoSistemas/AutenticacaoSistemas
-    AutenticacaoSistemas/ComoGerarToken
-    AutenticacaoSistemas/Scopes
+    AutorizacaoSistemas/ComoGerarToken
+    AutorizacaoSistemas/Scopes
 
 .. toctree::
     :maxdepth: 3
     :hidden:
     :caption: Autenticação de Usuários
 
-    AutenticacaoUsuarios/AutenticacaoUsuarios
     AutenticacaoUsuarios/ComoGerarToken
     AutenticacaoUsuarios/Scopes
 
@@ -32,10 +31,10 @@ Seja bem vindo à documentação do Acesso Cidadão para Devs!
     :hidden:
     :caption: Autorização de Usuários
 
-    Autorizacao/AutorizacaoUsuarios
-    Autorizacao/DadosValidados
-    Autorizacao/Verificacao
-    Autorizacao/Perfis
+    AutorizacaoUsuarios/AutorizacaoUsuarios
+    AutorizacaoUsuarios/DadosValidados
+    AutorizacaoUsuarios/Verificacao
+    AutorizacaoUsuarios/Perfis
 
 .. toctree::
     :maxdepth: 3
@@ -50,8 +49,10 @@ Seja bem vindo à documentação do Acesso Cidadão para Devs!
     :hidden:
     :caption: Integração com o Acesso Cidadão
 
+    Integracao/CriarSistema
     Integracao/Acesso
     Integracao/ACAdmin
-    
+    Integracao/Especificacoes
+
 
 

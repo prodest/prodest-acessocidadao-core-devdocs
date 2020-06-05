@@ -9,8 +9,8 @@ Após o registro o responsável pelo sistema integrador será configurado como p
 Após o registro do sistema conforme descrito anteriormente é necessário criar os Apps para obter um Client Id e Client Secret necessários para o consumo de qualquer serviço.
 
 Um App poderá ter dois tipos de fluxo:
-  - **ClientCredentials:** Fluxo que deverá ser utilizado quando se deseja obter o Access Token através da autenticação da aplicação. Conforme explicado [aqui](/AutenticacaoSistemas/AutenticacaoSistemas.md) 
-  - **Hybrid:** Fluxo que deverá ser utilizado quando se deseja obter o Access Token através da autenticação do usuário. Conforme explicado [aqui](/AutenticacaoUsuarios/AutenticacaoUsuarios.md)
+  - **ClientCredentials:** Fluxo que deverá ser utilizado quando se deseja obter o Access Token através da autenticação da aplicação. Conforme explicado [aqui](/AutorizacaoSistemas/ComoGerarToken.md) 
+  - **Hybrid:** Fluxo que deverá ser utilizado quando se deseja obter o Access Token através da autenticação do usuário. Conforme explicado [aqui](/AutenticacaoUsuarios/ComoGerarToken.md)
   
 ## Criando um App ClientCredentials
 
