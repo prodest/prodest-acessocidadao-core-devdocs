@@ -6,7 +6,7 @@
 
 Os scopes devem ser solicitados via Solicitação de Atendimento que deve ser enviada para o email atendimento@prodest.es.gov.br por pessoa cadastrada como responsavél por abertura de chamados do orgão solicitante.
 
-``` important:: Na V1 da API os scopes acessocidadao-base e AcessoCidadao são obrigatórios para todos os endpoints e devem ser requisitados juntos com qualquer outro scope
+``` important:: Na V1 da API os scopes acessocidadao-base e AcessoCidadao são obrigatórios para todos os endpoints e devem ser requisitados juntos com qualquer outro scope específico
 ```
 
 ### Modelo de solicitação

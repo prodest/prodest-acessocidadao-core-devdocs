@@ -1,6 +1,9 @@
 # Introdução 
 
-A ideia inicial do Acesso Cidadão (AC) era criar um sistema que centralizasse as informações do cidadão e do servidor público em uma base de dados única, facilitando assim a validação da consistência dos dados e provendo autenticação e autorização de uma forma simples e segura. 
+``` important:: Essa documentação é para desenvolvedores que estão trabalhando com a integração junto ao Acesso Cidadão, caso queira acessar a documentação de usuário do Acesso Cidadão, ela está disponível em https://docs.acessocidadao.es.gov.br.
+```
+
+A ideia inicial do Acesso Cidadão (AC) foi criar um sistema que centralizasse as informações do cidadão e do servidor público em uma base de dados única, facilitando assim a validação da consistência dos dados e provendo autenticação e autorização de uma forma simples e segura. 
 
 Ao fornecer uma plataforma abrangente para comprovação de informações e documentos pessoais, o sistema Acesso Cidadão disponibiliza a qualquer cidadão um local único e centralizado com as informações necessárias para o consumo dos serviços online prestados pelo Estado. A medida que mais informações são agregadas no perfil de cada pessoa o grau de confiabilidade da conta do cidadão aumenta, o que permite que sistemas e serviços do governo que requerem maior nível de segurança sejam acessados.
 

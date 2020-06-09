@@ -1,68 +1,50 @@
-# Scopes de usuário
+# Scopes de identidade (usuários)
 
-## Definindo Recursos
+Scopes de identidade protegem [recursos de identidade](/Recursos).
 
-O principal papel de um serviço de tokens OpenID Connect/OAuth é controlar o acesso a recursos.
-
-Os dois principais tipos de recurso no Acesso Cidadão são:
-
-- **Recursos de Identidade:** representam claims sobre os cidadãos como Id, apelido ou endereço de email. 
-- **Recursos de API:** representam funcionalidades que o cliente quer acessar. Em geral, são endpoints HTTP (aka APIs). Melhor explicado [aqui](/AutorizacaoSistemas/Scopes)
-
-## Recursos de identidade
-
-Um recurso de identidade é um grupo de *"claims"* nomeadas e que pode ser requisitado a partir de um parametro *scope*:
-
-- Uma *claim* é um declaração sobre um cidadão, por exemplo o nome, endereço de e-mail ou data de nascimento. Cada um desses dados individualmente é chamado de *claim*.
-- Quando agrupamos algumas claims e damos um nome temos um recurso de identidade.
-- Os recursos de identidade podem ser requisitados por um *scope* que nesse caso vai ser o nome do recurso de identidade.
-
-Por exemplo, temos o scope nome do acesso cidadão que contém as claims nome e nomeValidado. Ou o scope openid que é obrigatório pela [especificação OpenId](https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims) e contém a claim *sub* com o id do cidadão (*subject id*).
-
-### Scopes do Acesso Cidadão
+## Scopes do Acesso Cidadão
 
 Os scopes públicos estão disponíveis para qualquer sistema cadastrado no Acesso Cidadão. Os scopes não públicos só serão disponibilizados após solicitação com justificativa para a equipe responsável seguindo o modelo de solicitação apresentado abaixo.
 
-#### Padrão do Protocolo
+### Padrão do Protocolo
 
 * openid
   * avatarUrl
-  * apelido
-  * sub
-* profile (já contém a claim apelido com o campo "Como gostaria de ser chamado")
-  * subNovo
+  * apelido (campo "Como gostaria de ser chamado" do perfil de usuário)
+  * sub (id do usuário, DEPRECADO, sempre que possível utilizar o campo subNovo que vai substituir o sub na nova versão)
+* profile
+  * subNovo (id do usuário, vai substituir o sub na nova versão)
 
-#### Públicos
+### Públicos
 
 * agentepublico (se tem papel institucional cadastrado no AC)
   * agentePublico (true ou false)
 * email
-  * email
+  * email (email principal cadastrado)
 * permissoes (disponível caso o sistema esteja configurado como corporativo e habilitado para controlar [autorização de usuários](/AutorizacaoUsuarios/AutorizacaoUsuarios))
-  * permissao
+  * permissao 
 
-#### Necessário solicitação
+``` important:: O scope de permissões será deprecado na nova versão. Toda as informações de autorização devem ser buscadas via API do Acesso Cidadão.
+```
+
+### Necessário solicitação
 * nome
   * nome
   * nomeValidado (true ou false)
 * cpf
   * cpf
-  * cpfValidado (true ou false)
 * dataNascimento
   * dataNascimento
   * dataNascimentoValidada (true ou false)
-* documentos
-  * cnhNumero
-  * cnhCedula
 * filiacao
   * nomePaiValidado
   * nomePai
   * nomeMaeValidado
   * nomeMae
 * roles
-  * role
+  * role (apenas os perfis do usuários no sistema solicitante)
 * offline_access
-  * especial do protocolo
+  * reservado pelo protocolo
 
 ## Como requisitar scopes não públicos
 

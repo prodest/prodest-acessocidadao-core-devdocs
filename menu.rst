@@ -8,15 +8,14 @@ Seja bem vindo à documentação do Acesso Cidadão para Devs!
     :hidden:
     
     index
-    AutenticacaoAutorizacao
+    Recursos
 
 .. toctree::
     :maxdepth: 3
     :hidden:
-    :caption: Autorização de Sistemas (Para acessar APIs)
+    :caption: Autorização de Sistemas
 
     AutorizacaoSistemas/ComoGerarToken
-    AutorizacaoSistemas/Scopes
 
 .. toctree::
     :maxdepth: 3
