@@ -87,9 +87,8 @@ curl --location --request POST 'https://acessocidadao.es.gov.br/is/connect/token
 --data-urlencode 'redirect_uri=htts://appcliente.com.br/loginacessocidadao'
 ```
 
-``` important:: O parametro redirect_uri é **case sensitive**_e deve ser exatamente igual o usado na requisição inicial.
+``` important:: O parametro redirect_uri é **case sensitive** e deve ser exatamente igual o usado na requisição inicial.
 ```
-
 
 O serviço retornará, em caso de sucesso, no formato JSON, as informações conforme exemplo:
 ```json
