@@ -97,4 +97,4 @@ O serviço retornará, em caso de sucesso, no formato JSON, as informações con
 }
 ```
 
-   6. De posse das informações do json anterior, a aplicação consumidora está habilitada para fazer chamada aos endpoints que solicitam Access Token de usuário do Acesso Cidadão.
+6\. De posse das informações do json anterior, a aplicação consumidora está habilitada para fazer chamada aos endpoints que solicitam Access Token de usuário do Acesso Cidadão.

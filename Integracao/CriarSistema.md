@@ -2,6 +2,8 @@
 
 Para fazer integrações com o Acesso Cidadão e com outras APIs disponibilizadas pelo Governo do Estado do Espírito Santo é necessário que haja um registro desse sistema integrador no AC Admin. Esse registro ocorre por meio de Solicitação de Atendimento enviada para o email atendimento@prodest.es.gov.br por pessoa cadastrada como responsavél por abertura de chamados do orgão solicitante.
 
+Após o registro o responsável pelo sistema integrador será configurado como proprietário do novo sistema sendo responsável pelas informações ali contidas e pelo cadastramento (e descadastramento) de todos os desenvolvedores com acesso as informações e configurações daquele sistema.
+
 ### Modelo de solicitação
 
 **Titulo da solicitação:** Criação de novo sistema no Acesso Cidadão
