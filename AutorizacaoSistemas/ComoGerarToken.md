@@ -39,7 +39,7 @@ Parâmetros que devem ser colocados no Body da requisição POST para **https://
     Authorization: Basic Q0xJRU5UX0lEOkNMSUVOVF9TRUNSRVQ=
     Content-type: application/x-www-form-urlencoded
     
-    grant-type=client_credentials&scope=scopes-selecionados
+    grant_type=client_credentials&scope=scopes-selecionados
 ```
 
 ```code-block::
@@ -48,7 +48,7 @@ Parâmetros que devem ser colocados no Body da requisição POST para **https://
     curl --location --request POST 'https://acessocidadao.es.gov.br/is/connect/token' \
     --header 'Authorization: Basic Q0xJRU5UX0lEOkNMSUVOVF9TRUNSRVQ='
     --header 'Content-type: application/x-www-form-urlencoded'
-    --data-urlencode 'grant-type=client_credentials'
+    --data-urlencode 'grant_type=client_credentials'
     --data-urlencode 'scope=scopes-selecionados'
 ```
 
