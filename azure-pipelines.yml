@@ -1,0 +1,78 @@
+trigger:
+- master
+
+pool:
+  name: 'Default'
+
+jobs:
+  - job: Build
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          make html
+    - task: PublishBuildArtifacts@1
+      displayName: Publish Artifact
+      inputs:
+        PathtoPublish: '$(Build.SourcesDirectory)\_build\html'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+  - deployment: DeployProd
+    displayName: Deploy de Docs
+    environment: 
+      name: 'IISProducao'
+      resourceType: VirtualMachine
+    variables: 
+      - name: 'system.debug'
+        value: 'true'
+    strategy:
+      rolling:
+        maxParallel: 1
+        deploy:
+          steps:
+          - checkout: git://gesin/prodest-build-deploy-tools
+            path: buildDeploy
+          - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: 'current'
+              specificBuildWithTriggering: true
+              downloadType: 'single'
+              artifactName: 'drop'
+              downloadPath: '$(System.ArtifactsDirectory)'
+          - task: IISWebAppManagementOnMachineGroup@0
+            displayName: 'Criar sistema no IIS'
+            inputs:
+              IISDeploymentType: 'IISWebsite'
+              ActionIISWebsite: 'CreateOrUpdateWebsite'
+              WebsiteName: '$(Hostname)'
+              WebsitePhysicalPath: '$(Diretorio_Raiz)'
+              WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
+              AddBinding: true
+              Bindings: '{"bindings":[{"protocol":"http","ipAddress":"All Unassigned","port":"80","hostname":"$(Hostname)","sslThumbprint":"","sniFlag":false}]}'
+              CreateOrUpdateAppPoolForWebsite: true
+              AppPoolNameForWebsite: '$(Hostname)'
+              DotNetVersionForWebsite: 'No Managed Code'
+              PipeLineModeForWebsite: 'Integrated'
+              AppPoolIdentityForWebsite: 'ApplicationPoolIdentity'
+          - task: PowerShell@2
+            displayName: 'Permissionamento na Pasta do Sistema e site fora do ARR por enquanto'
+            inputs:
+              targetType: 'inline'
+              script: |
+                Set-Location -Path $(Agent.BuildDirectory)/buildDeploy
+                .\appPoolPermissionV1.ps1 -dir $(Diretorio_Raiz) -site $(HostName) -per Read
+                .\addDisableFileV1.ps1 -dir . -timeout 0
+              workingDirectory: '$(System.ArtifactsDirectory)'
+          - task: IISWebAppDeploymentOnMachineGroup@0
+            displayName: 'Publicar codigo do TFS no IIS'
+            inputs:
+              WebSiteName: '$(Hostname)'
+              Package: '$(System.ArtifactsDirectory)/drop'
+              RemoveAdditionalFilesFlag: true
+              ExcludeFilesFromAppDataFlag: true
+              TakeAppOfflineFlag: true
+          - task: PowerShell@2
+            inputs:
+              targetType: 'inline'
+              script: |
+                Write-Host "Fim do Deploy de Desenvolvimento"
