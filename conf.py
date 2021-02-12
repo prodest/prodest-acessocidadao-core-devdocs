@@ -52,6 +52,7 @@ language = 'pt_BR'
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+html_extra_path = ['_extra_path']
 
 #source_encoding = 'iso-8859-15'
 
