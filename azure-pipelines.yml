@@ -19,6 +19,7 @@ jobs:
         publishLocation: 'Container'
   - deployment: DeployProd
     displayName: Deploy de Docs
+    dependsOn: Build
     environment: 
       name: 'EDocsIISProducao'
       resourceType: VirtualMachine
