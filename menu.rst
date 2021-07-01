@@ -16,6 +16,7 @@ Seja bem vindo à documentação do Acesso Cidadão para Devs!
     :caption: Autorização de Sistemas
 
     AutorizacaoSistemas/ComoGerarToken
+    AutorizacaoSistemas/ExemplosImplementacao
 
 .. toctree::
     :maxdepth: 3
