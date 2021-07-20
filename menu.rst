@@ -54,4 +54,9 @@ Seja bem vindo à documentação do Acesso Cidadão para Devs!
     Integracao/Especificacoes
 
 
+.. toctree::
+    :maxdepth: 3
+    :hidden:
+    :caption: Carga
 
+    Carga/SIARHES
